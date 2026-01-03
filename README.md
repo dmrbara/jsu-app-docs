@@ -6,6 +6,7 @@ Documentation hub for the JSU XIX mobile application.
 
 ### Project
 - [Sprint Planning](project/sprint-planning.md) - Timeline, epics, team roles, and sprint breakdown
+- [Discord Guide](project/discord-guide.md) - Channels, standups, and communication guidelines
 
 ### Code Guidelines
 - [Git Workflow](code/git-workflow-guide.md) - Commits, branches, PRs, and merging
@@ -19,7 +20,8 @@ Documentation hub for the JSU XIX mobile application.
 ```
 jsu-app-docs/
 ├── project/
-│   └── sprint-planning.md
+│   ├── sprint-planning.md
+│   └── discord-guide.md
 ├── code/
 │   ├── git-workflow-guide.md
 │   └── naming-conventions.md
