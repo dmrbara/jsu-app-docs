@@ -11,15 +11,20 @@ Documentation hub for the JSU XIX mobile application.
 - [Git Workflow](code/git-workflow-guide.md) - Commits, branches, PRs, and merging
 - [Naming Conventions](code/naming-conventions.md) - Files, folders, and code naming standards
 
+### Resources
+- [Recommended Tools](resources/tools.md) - AI coding tools, browser extensions, and model recommendations
+
 ## Structure
 
 ```
 jsu-app-docs/
 ├── project/
-│   ├── sprint-planning.md
-└── code/
-    ├── git-workflow-guide.md
-    └── naming-conventions.md
+│   └── sprint-planning.md
+├── code/
+│   ├── git-workflow-guide.md
+│   └── naming-conventions.md
+└── resources/
+    └── tools.md
 ```
 
 ## Tech Stack
