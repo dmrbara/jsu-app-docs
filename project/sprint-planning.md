@@ -716,7 +716,23 @@ A task is "Done" when:
 - **Design:** Figma with dev handoff
 - **Documentation:** This repo (`/docs`)
 
-### 8.3 Async-First During Low Capacity
+### 8.3 Linear Task Management
+
+**Task Labels**
+
+Tasks in Linear are labeled by suitability level:
+- `senior` - Complex tasks requiring extensive experience (native modules, performance, architecture)
+- `mid` - Medium complexity tasks (UI implementation, hooks, integrations)
+- `junior` - Simpler tasks suitable for learning (basic components, documentation, testing)
+
+**Self-Assignment**
+
+- Tasks have **no pre-assigned owner**
+- Team members are responsible for picking up tasks that match their skill level
+- When you start a task, assign it to yourself and move it to "In Progress"
+- If a task is too difficult or you get stuck, unassign yourself and flag it in `#dev`
+
+### 8.4 Async-First During Low Capacity
 
 During exams and holidays:
 - No mandatory sync meetings
