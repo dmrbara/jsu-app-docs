@@ -1,58 +1,62 @@
-**Version:** 1.0   
+# JSU XIX App - Sprint Planning Document
+
+**Version:** 1.0  
+**Created:** December 9, 2025  
 **Status:** Active  
 **Hard Deadline:** July 1, 2026 - App live in App Store & Play Store
 
 ---
 
 ## Executive Summary
-This document outlines the development plan for the JSU XIX mobile application. We organize work using **Sprints** (2-week timeframe in which we focus on something specific), **Epics** (buckets of similar tasks grouped together) and **Tasks**.
+
+This document outlines the development plan for the JSU XIX mobile application, a comprehensive platform for the Junior Summer University XIX event. The plan accounts for:
+
+- **9 team members** (1 professional, 2 Year 3, 2 Year 2, 4 Year 1 students)
+- **UBB 2025-2026 academic calendar** constraints (exams, holidays, thesis defense)
+- **Volunteer availability** (~5-15 hours/week per person)
+- **Agentic coding** tools to accelerate development
 
 ### Timeline Overview
+
 ```mermaid
-flowchart LR
-    subgraph Foundation["🏗️ Foundation Phase"]
-        S0[S0: Setup]
-        S1[S1: Auth]
-    end
+gantt
+    title JSU XIX App Development Timeline
+    dateFormat  YYYY-MM-DD
     
-    subgraph Core["⭐ Core Features Phase"]
-        S2[S2: Profiles]
-        S3[S3: QR Scanner]
-        S4[S4: Drinks]
-        S5[S5: Docs/Gallery]
-    end
+    section Foundation
+    S0 - Setup & Onboarding       :s0, 2025-12-09, 14d
+    Holiday Break                 :crit, hol, 2025-12-23, 14d
+    S1 - Authentication           :s1, 2026-01-06, 13d
+    Exam Period                   :crit, exam, 2026-01-19, 21d
     
-    subgraph Advanced["🚀 Advanced Phase"]
-        S6[S6: Alerts/Chat]
-        S7[S7: Admin/Houses]
-        S8[S8: Reports]
-    end
+    section Core Features
+    S2 - Profiles & Schedule      :s2, 2026-02-09, 14d
+    S3 - QR Scanner               :active, s3, 2026-02-23, 15d
+    S4 - Drink Tracking           :active, s4, 2026-03-10, 14d
+    S5 - Documents & Gallery      :active, s5, 2026-03-24, 14d
     
-    subgraph Release["📱 Release Phase"]
-        S9[S9: Store Prep]
-        S10[S10: Rejections]
-        S11[S11: Buffer]
-        LIVE((🎉 LIVE))
-    end
+    section Advanced Features
+    S6 - RO-Alert + Faculty Chat  :s6, 2026-04-07, 14d
+    S7 - Admin + Houses           :s7, 2026-04-21, 14d
+    S8 - Reports & Coordinator    :s8, 2026-05-05, 14d
     
-    S0 --> S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9 --> S10 --> S11 --> LIVE
-    
-    style Foundation fill:#e0f2fe
-    style Core fill:#dcfce7
-    style Advanced fill:#fef3c7
-    style Release fill:#fce7f3
-    style LIVE fill:#4ade80,stroke:#16a34a,stroke-width:3px
+    section Release
+    S9 - Code Freeze & Store Prep :s9, 2026-05-19, 14d
+    S10 - Rejection Handling      :s10, 2026-06-02, 14d
+    S11 - Final Buffer            :s11, 2026-06-16, 14d
+    APP LIVE                      :milestone, live, 2026-07-01, 0d
 ```
 
 **Key Milestones:**
-- **Setup** - Sprint 0 (Dec 9-22)
-- **Auth** - Sprint 1 (Jan 6-18)
-- **Peak Productivity** - Sprints 3-5 (Feb 23 - Apr 6) at 70% capacity
-- **Code Freeze** - May 18, 2026
-- **App Live** - July 1, 2026
+- 📦 **Setup** - Sprint 0 (Dec 9-22)
+- 🔐 **Auth** - Sprint 1 (Jan 6-18)
+- ⭐ **Peak Productivity** - Sprints 3-5 (Feb 23 - Apr 6) at 70% capacity
+- 🔒 **Code Freeze** - May 18, 2026
+- 🚀 **App Live** - July 1, 2026
 
 ### Critical Constraint
-**Year 3 seniors (Bogdi, Paul)** have thesis defense **June 29 - July 5, 2026**. All complex development must be completed by **May 18** (code freeze).
+
+**Year 3 seniors (Bogdan, Paul)** - our most experienced mobile developers - have thesis defense **June 29 - July 5, 2026**. All complex development must be completed by **May 18** (code freeze).
 
 ---
 
@@ -60,34 +64,33 @@ flowchart LR
 
 ### 1.1 Team Matrix
 
-| Role              | Name             |
-| ----------------- | ---------------- |
-| **Tech Lead**     | Davide Bara      |
-| **Mobile Senior** | Bogdi Șchiop     |
-| **Mobile Senior** | Paul Șchiop      |
-| **Mobile Mid**    | Rareș Dobre      |
-| **Mobile Mid**    | Alex Băncilă     |
-| **UI/UX Design**  | David Posa       |
-| **Junior Dev**    | Ioana Mincu      |
-| **Junior Dev**    | Bogdan Ciobănașu |
-| **Junior Dev**    | Raul Gliga       |
+| Role | Name | Year | Skills | Weekly Hours (Est.) |
+|------|------|------|--------|---------------------|
+| **Tech Lead** | Davide | Professional | Python, React, Azure, basic React Native, Supabase | 8-12h |
+| **Mobile Senior** | Bogdan | Year 3 FMI | Mobile (native + non-native), 4yr intensive CS | 10-15h |
+| **Mobile Senior** | Paul | Year 3 FMI | Mobile (native + non-native), 4yr intensive CS | 10-15h |
+| **Mobile Mid** | Rareș-Ștefan | Year 2 FMI | Java, Python, C++, Git, quick learner, AI tools | 8-12h |
+| **Mobile Mid** | Alex | Year 2 FMI | Web experience, eager to learn mobile | 8-10h |
+| **UI/UX Design** | David | Year 1 | Figma, Adobe, wireframing, prototyping | 8-10h |
+| **Junior Dev** | Raul | Year 1 FMI | Python, C++, learning | 5-8h |
+| **Junior Dev** | Bogdan-Andrei | Year 1 | Python, C++, learning | 5-8h |
+| **Junior Dev** | Ioana | Year 1 | HTML, Java, C++, Python basics | 5-8h |
 
-### 1.2 Team Capacity & Constraints
+### 1.2 Academic Calendar Constraints (UBB 2025-2026)
 
-| Period                    | Dates           | Impact on Team                      |
-| ------------------------- | --------------- | ----------------------------------- |
-| End of Semester 1         | Dec 9-22, 2025  | 50% capacity - classes winding down |
-| **Christmas Vacation**    | Dec 23 - Jan 5  | **15% capacity** - holidays         |
-| Classes Resume            | Jan 6-18, 2026  | 35% capacity - before exams         |
-| **Semester 1 Exams**      | Jan 19 - Feb 8  | **15% capacity** - exam session     |
-| Vacation + Retakes        | Feb 9-22        | 50% capacity                        |
-| Semester 2 Classes        | Feb 23 - Apr 12 | **70% capacity** - peak window      |
-| **Easter Vacation**       | Apr 13-19       | **20% capacity** - holiday          |
-| Classes Resume            | Apr 20 - May 24 | 60% capacity                        |
-| **Year 3 Exams**          | May 25 - Jun 7  | Bogdi & Paul limited                |
-| **Year 1-2 Exams**        | Jun 8-28        | 30% capacity                        |
-| **Thesis Defense (Yr 3)** | Jun 29 - Jul 5  | **Bogdi & Paul unavailable**        |
-*Might be modified depending on FutureUP, UBB Festival and IT OSUBB estimated efforts.*
+| Period | Dates | Impact on Team |
+|--------|-------|----------------|
+| End of Semester 1 | Dec 9-22, 2025 | 50% capacity - classes winding down |
+| **Christmas Vacation** | Dec 23 - Jan 5 | **15% capacity** - holidays |
+| Classes Resume | Jan 6-18, 2026 | 35% capacity - before exams |
+| **Semester 1 Exams** | Jan 19 - Feb 8 | **15% capacity** - exam session |
+| Vacation + Retakes | Feb 9-22 | 50% capacity |
+| Semester 2 Classes | Feb 23 - Apr 12 | **70% capacity** - peak window |
+| **Easter Vacation** | Apr 13-19 | **20% capacity** - holiday |
+| Classes Resume | Apr 20 - May 24 | 60% capacity |
+| **Year 3 Exams** | May 25 - Jun 7 | Bogdan & Paul limited |
+| **Year 1-2 Exams** | Jun 8-28 | 30% capacity |
+| **Thesis Defense (Yr 3)** | Jun 29 - Jul 5 | **Bogdan & Paul unavailable** |
 
 ### 1.3 Role Responsibilities
 
@@ -98,14 +101,14 @@ flowchart LR
 - Store submission process management
 - Team coordination and blocker removal
 
-**Mobile Seniors (Bogdi, Paul)**
+**Mobile Seniors (Bogdan, Paul)**
 - Complex features: QR scanner, drink tracking, realtime
 - Camera integration and native modules
 - Push notification setup (OneSignal)
 - Performance optimization
-- Knowledge transfer to mid-level and junior devs
+- Knowledge transfer to mid-level devs
 
-**Mobile Mid (Rareș, Alex)**
+**Mobile Mid (Rareș-Ștefan, Alex)**
 - UI implementation from Figma designs
 - Medium complexity features
 - Bug fixes and maintenance
@@ -118,7 +121,7 @@ flowchart LR
 - Design system documentation
 - UI polish and visual QA
 
-**Junior Devs (Raul, Bogdan, Ioana)**
+**Junior Devs (Raul, Bogdan-Andrei, Ioana)**
 - Simple UI components
 - Testing and QA assistance
 - Documentation
@@ -130,29 +133,30 @@ flowchart LR
 
 ### 2.1 Must-Have Epics (v1.0)
 
-| Epic | Description                | Priority | Complexity | Primary Role        |
-| ---- | -------------------------- | -------- | ---------- | ------------------- |
-| E1   | Project Setup & Onboarding | P0       | Low        | Tech Lead           |
-| E2   | Authentication System      | P0       | Medium     | Tech Lead + Seniors |
-| E3   | User Profiles + QR Display | P0       | Medium     | Mid-level           |
-| E4   | Schedule/Events Display    | P0       | Low        | Mid-level + Juniors |
-| E5   | QR Scanner                 | P0       | High       | Seniors             |
-| E6   | Drink Tracking             | P0       | High       | Seniors             |
-| E7   | RO-Alert Notifications     | P0       | High       | Seniors + Tech Lead |
-| E8   | Document Upload            | P0       | Medium     | Mid-level           |
-| E9   | Photo Gallery              | P1       | Low        | Mid-level + Juniors |
-| E10  | Leaderboard                | P1       | Low        | Juniors             |
-| E11  | Meal Voting                | P1       | Medium     | Mid-level           |
-| E12  | Attendance System          | P1       | Medium     | Mid-level           |
-| E13  | Admin Dashboard            | P0       | High       | Tech Lead + Seniors |
-| E14  | Coordinator Dashboard      | P0       | Medium     | Mid-level           |
-| E15  | Reports                    | P1       | Medium     | Tech Lead           |
-| E16  | House System (reveal)      | P0       | Medium     | Seniors             |
-| E17  | Faculty Chat               | P2       | Medium     | Seniors             |
-| E18  | House Chat                 | P2       | Medium     | Seniors             |
-| E19  | Testing & QA               | P0       | Medium     | All                 |
-| E20  | Store Submission           | P0       | Medium     | Tech Lead           |
-→ implement search as alternative for qr codes
+| Epic | Description | Priority | Complexity | Primary Role |
+|------|-------------|----------|------------|--------------|
+| E1 | Project Setup & Onboarding | P0 | Low | Tech Lead |
+| E2 | Authentication System | P0 | Medium | Tech Lead + Seniors |
+| E3 | User Profiles + QR Display | P0 | Medium | Mid-level |
+| E4 | Schedule/Events Display | P0 | Low | Mid-level + Juniors |
+| E5 | QR Scanner | P0 | High | Seniors |
+| E6 | Drink Tracking | P0 | High | Seniors |
+| E7 | RO-Alert Notifications | P0 | High | Seniors + Tech Lead |
+| E8 | Document Upload | P0 | Medium | Mid-level |
+| E9 | Photo Gallery | P1 | Low | Mid-level + Juniors |
+| E10 | Leaderboard | P1 | Low | Juniors |
+| E11 | Meal Voting | P1 | Medium | Mid-level |
+| E12 | Attendance System | P1 | Medium | Mid-level |
+| E13 | Admin Dashboard | P0 | High | Tech Lead + Seniors |
+| E14 | Coordinator Dashboard | P0 | Medium | Mid-level |
+| E15 | Reports | P1 | Medium | Tech Lead |
+| E16 | House System (reveal) | P0 | Medium | Seniors |
+| E17 | Faculty Chat | P2 | Medium | Seniors |
+| E18 | House Chat | P2 | Medium | Seniors |
+| E19 | Testing & QA | P0 | Medium | All |
+| E20 | Store Submission | P0 | Medium | Tech Lead |
+| E21 | Coordinator Duty Shifts (Ture de Cămin) | P1 | Medium | Mid-level + Tech Lead |
+
 ### 2.2 Epic Details
 
 #### E1: Project Setup & Onboarding
@@ -314,91 +318,40 @@ flowchart LR
 - [ ] House members only
 - [ ] Unlock triggered by reveal
 
+#### E21: Coordinator Duty Shifts (Ture de Cămin)
+**Acceptance Criteria:**
+- [ ] Database tables: duty_shifts, duty_shift_assignments
+- [ ] RLS: Coordinators view ALL shifts, admins CRUD, participants blocked
+- [ ] Admin UI: Create/edit shifts, assign coordinators
+- [ ] Coordinator UI: Full timetable with "Turele mele" filter
+- [ ] Shift types: dorm_guard, party_return, chillzone, bar, party_entrance
+- [ ] Bar shifts display bar station name
+- [ ] Party-related shifts link to event
+- [ ] Push notification reminders (default 30 min)
+- [ ] Coordinators can customize reminder timing (15/30/60 min or disabled)
+- [ ] Reminder settings screen in coordinator app
 
 ---
-
-
-
-
-
-
-
-
 
 ## 3. Sprint Timeline
-
-```mermaid
----
-config:
-  gantt:
-    barHeight: 20
-    fontSize: 11
-    leftPadding: 120
-    rightPadding: 20
----
-gantt
-    title JSU XIX Development Calendar (Dec 2025 - Jul 2026)
-    dateFormat YYYY-MM-DD
-    axisFormat %B
-    tickInterval 1month
-    
-    section Dec 2025
-    Sprint 0 - Setup & Onboarding       :active, s0, 2025-12-09, 2025-12-22
-    Holiday Break                       :crit, holiday1, 2025-12-23, 2026-01-05
-    
-    section Jan 2026
-    Sprint 1 - Authentication           :s1, 2026-01-06, 2026-01-18
-    Semester 1 Exams                    :crit, exams1, 2026-01-19, 2026-02-08
-    
-    section Feb 2026
-    Sprint 2 - Profiles & Schedule      :s2, 2026-02-09, 2026-02-22
-    Sprint 3 - QR Scanner               :s3, 2026-02-23, 2026-03-09
-    
-    section Mar 2026
-    Sprint 4 - Drink Tracking           :s4, 2026-03-10, 2026-03-23
-    Sprint 5 - Documents & Gallery      :s5, 2026-03-24, 2026-04-06
-    
-    section Apr 2026
-    Sprint 6 - RO-Alert + Chat          :s6, 2026-04-07, 2026-04-12
-    Easter Vacation                     :crit, easter, 2026-04-13, 2026-04-19
-    
-    Sprint 7 - Admin + Houses           :s7, 2026-04-21, 2026-05-04
-    
-    section May 2026
-    Sprint 8 - Reports & Coordinator    :s8, 2026-05-05, 2026-05-18
-    CODE FREEZE                         :milestone, freeze, 2026-05-18, 1d
-    Sprint 9 - Store Prep               :s9, 2026-05-19, 2026-06-01
-    Year 3 Exams Start                  :crit, yr3exam, 2026-05-25, 2026-06-07
-    
-    section Jun 2026
-    Sprint 10 - Rejection Handling      :s10, 2026-06-02, 2026-06-15
-    Year 1-2 Exams                      :crit, yr12exam, 2026-06-08, 2026-06-28
-    Sprint 11 - Final Buffer            :s11, 2026-06-16, 2026-06-29
-    Thesis Defense (Yr 3)               :crit, thesis, 2026-06-29, 2026-07-05
-    
-    section Jul 2026
-    APP LIVE                            :milestone, live, 2026-07-01, 0d
-```
-[Backup link](https://www.mermaidchart.com/app/projects/ddaed451-929d-4dde-b9f4-7646a5216cf1/diagrams/22d362dc-c186-482c-b898-221aa8933822/version/v0.1/edit)
-[Jira](https://it-jsu.atlassian.net/jira/software/projects/JSU/boards/1/backlog)
 
 ### Sprint 0: Setup & Onboarding
 **Dates:** December 9-22, 2025  
 **Capacity:** 50%  
 **Focus:** Foundation
 
-| Task                                      | Role      | Story Points |
-| ----------------------------------------- | --------- | ------------ |
-| Create Expo project with TypeScript       | Tech Lead | 2            |
-| Set up Supabase project                   | Tech Lead | 3            |
-| Configure NativeWind                      | Tech Lead | 2            |
-| Set up Expo Router structure              | Tech Lead | 3            |
-| Create Git repo and branch strategy       | Tech Lead | 1            |
-| Environment setup documentation           | Tech Lead | 2            |
-| Help all team members set up environments | All       | 5            |
-| Begin Figma design system                 | UI/UX     | 5            |
-| React Native / Expo self-study            | All       | 3            |
-| Supabase training self-study              | All       | 3            |
+| Task | Role | Story Points |
+|------|------|--------------|
+| Create Expo project with TypeScript | Tech Lead | 2 |
+| Set up Supabase project | Tech Lead | 3 |
+| Configure NativeWind | Tech Lead | 2 |
+| Set up Expo Router structure | Tech Lead | 3 |
+| Create Git repo and branch strategy | Tech Lead | 1 |
+| Environment setup documentation | Tech Lead | 2 |
+| Help all team members set up environments | All | 5 |
+| Begin Figma design system | UI/UX | 5 |
+| React Native / Expo training session | Tech Lead | 3 |
+| Supabase training session | Tech Lead | 3 |
 
 **Sprint Goal:** All developers can run the app locally and understand the tech stack.
 
@@ -409,7 +362,8 @@ gantt
 **Capacity:** 15%  
 **Focus:** Light async work only
 
-- Optional: team members explore tutorials (React Native, Supabase, Cursor) & UI/UX continues Figma designs
+- UI/UX continues Figma designs
+- Optional: team members explore tutorials
 - No meetings or deadlines
 
 ---
@@ -552,10 +506,10 @@ gantt
 
 ---
 
-### Sprint 7: Admin + Houses + House Chat
+### Sprint 7: Admin + Houses + House Chat + Duty Shifts
 **Dates:** April 21 - May 4, 2026  
 **Capacity:** 60%  
-**Focus:** Admin features + house system
+**Focus:** Admin features + house system + coordinator shifts
 
 | Task | Role | Story Points |
 |------|------|--------------|
@@ -569,12 +523,15 @@ gantt
 | **House chat unlock on reveal** | Seniors | 2 |
 | Meal menu setup | Mid | 3 |
 | Meal voting component | Juniors | 3 |
+| **E21: Duty shifts DB migration + RLS** | Tech Lead | 3 |
+| **E21: Admin shifts list UI** | Mid | 3 |
+| **E21: Admin create/edit shift form** | Mid | 3 |
 
-**Sprint Goal:** Admin can manage events/houses, house reveal works, house chat activates.
+**Sprint Goal:** Admin can manage events/houses/shifts, house reveal works, house chat activates.
 
 ---
 
-### Sprint 8: Reports, Leaderboard, Attendance, Coordinator
+### Sprint 8: Reports, Leaderboard, Attendance, Coordinator + Duty Shifts
 **Dates:** May 5-18, 2026  
 **Capacity:** 60%  
 **Focus:** Final features + knowledge transfer  
@@ -592,6 +549,11 @@ gantt
 | Drink reports view | Tech Lead | 3 |
 | Attendance reports view | Tech Lead | 3 |
 | Document status report | Tech Lead | 2 |
+| **E21: Admin coordinator assignment UI** | Mid | 3 |
+| **E21: Coordinator shifts timetable** | Mid | 4 |
+| **E21: Coordinator reminder settings** | Juniors | 2 |
+| **E21: Shift reminder Edge Function** | Tech Lead | 3 |
+| **E21: Shift card component** | Juniors | 2 |
 | **Knowledge transfer sessions** | Seniors → Mid | 5 |
 | Code documentation | Seniors | 3 |
 
@@ -659,25 +621,18 @@ gantt
 
 ---
 
+## 4. Risk Register
 
----
-
-
-
-
-## 4. Risks
-
-| Risk                                          | Probability | Impact | Mitigation                                                             |
-| --------------------------------------------- | ----------- | ------ | ---------------------------------------------------------------------- |
-| **Year 3 seniors unavailable in June**        | Certain     | High   | Front-load all complex work to May 18; knowledge transfer in Sprint 8  |
-| **App Store rejection**                       | High        | High   | Submit early (May 25), budget 4+ weeks for review cycles               |
-| **Exam period reduces capacity**              | Certain     | Medium | Adjust sprint scope during Jan/Jun; no critical deadlines during exams |
-| **Easter vacation delays**                    | Certain     | Low    | Sprint 6 has reduced scope; prioritize must-haves                      |
-| **OneSignal/iOS critical alerts setup fails** | Medium      | High   | Start early in Sprint 6; have fallback to regular push                 |
-| **Team member drops out**                     | Medium      | Medium | Cross-train team; document everything; use agentic coding              |
-| **Supabase Realtime issues**                  | Low         | High   | Test early; have polling fallback                                      |
-| **Scope creep**                               | Medium      | Medium | Strict prioritization; alignment on must-haves                         |
-
+| Risk | Probability | Impact | Mitigation |
+|------|-------------|--------|------------|
+| **Year 3 seniors unavailable in June** | Certain | High | Front-load all complex work to May 18; knowledge transfer in Sprint 8 |
+| **App Store rejection** | High | High | Submit early (May 25), budget 4+ weeks for review cycles |
+| **Exam period reduces capacity** | Certain | Medium | Adjust sprint scope during Jan/Jun; no critical deadlines during exams |
+| **Easter vacation delays** | Certain | Low | Sprint 6 has reduced scope; prioritize must-haves |
+| **OneSignal/iOS critical alerts setup fails** | Medium | High | Start early in Sprint 6; have fallback to regular push |
+| **Team member drops out** | Medium | Medium | Cross-train team; document everything; use agentic coding |
+| **Supabase Realtime issues** | Low | High | Test early; have polling fallback |
+| **Scope creep** | Medium | Medium | Strict prioritization; stakeholder aligned on must-haves |
 
 ---
 
@@ -685,13 +640,13 @@ gantt
 
 ### 5.1 From Seniors to Mid-Level (Sprint 8)
 
-| Topic                         | Seniors | Receivers       | Format              |
-| ----------------------------- | ------- | --------------- | ------------------- |
-| QR Scanner internals          | Bogdi   | Rareș           | Pair session + docs |
-| Drink tracking logic          | Paul    | Alex            | Code walkthrough    |
-| Supabase Realtime patterns    | Bogdi   | Rareș, Alex     | Workshop            |
-| Push notification debugging   | Paul    | Tech Lead       | Documentation       |
-| React Native performance tips | Both    | All mid/juniors | Team session        |
+| Topic | Seniors | Receivers | Format |
+|-------|---------|-----------|--------|
+| QR Scanner internals | Bogdan | Rareș-Ștefan | Pair session + docs |
+| Drink tracking logic | Paul | Alex | Code walkthrough |
+| Supabase Realtime patterns | Bogdan | Rareș-Ștefan, Alex | Workshop |
+| Push notification debugging | Paul | Tech Lead | Documentation |
+| React Native performance tips | Both | All mid/juniors | Team session |
 
 ### 5.2 Documentation Requirements
 
@@ -704,18 +659,18 @@ Before Sprint 9, seniors must document:
 
 ---
 
-## 6. June Backup Plan
+## 6. June Contingency Plan
 
 **Who handles what when seniors are unavailable (June 2 onwards):**
 
-| Area                     | Owner                     |
-| ------------------------ | ------------------------- |
-| Store submission issues  | Davide                    |
-| Critical bug fixes       | Davide + Rareș + Alex     |
-| UI/UX issues             | David                     |
-| Testing                  | Juniors                   |
-| Database issues          | Davide                    |
-| Push notification issues | Davide (with senior docs) |
+| Area | Primary | Backup |
+|------|---------|--------|
+| Store submission issues | Davide | - |
+| Critical bug fixes | Davide + Rareș-Ștefan | Alex |
+| UI/UX issues | David | - |
+| Testing | Juniors | Mid-level |
+| Database issues | Davide | - |
+| Push notification issues | Davide (with senior docs) | - |
 
 **Escalation path:**
 1. Try to resolve with documentation
@@ -725,48 +680,47 @@ Before Sprint 9, seniors must document:
 
 ---
 
-
-
-
-
 ## 7. Definition of Done
 
 A task is "Done" when:
--  Code is written and works locally
--  Code passes linting (no errors)
--  Feature matches Figma design (if applicable)
--  Works on both iOS and Android
--  Tested on real device (not just simulator) → you can’t test on iOS simulators if you have a windows machine
--  Romanian text is correct
--  Code reviewed by at least one other team member
--  Merged to main branch
--  No regression in existing features
+
+- [ ] Code is written and works locally
+- [ ] Code passes linting (no errors)
+- [ ] Feature matches Figma design (if applicable)
+- [ ] Works on both iOS and Android
+- [ ] Tested on real device (not just simulator)
+- [ ] Romanian text is correct
+- [ ] Code reviewed by at least one other team member
+- [ ] Merged to main branch
+- [ ] No regression in existing features
+
 ---
 
 ## 8. Communication Plan
 
 ### 8.1 Regular Ceremonies
 
-| Ceremony             | Frequency       | Duration | Attendees           | Description                                                            |
-| -------------------- | --------------- | -------- | ------------------- | ---------------------------------------------------------------------- |
-| Daily Standup        | Daily (async)   | 5 min    | All                 | Team shares progress, blockers, and plans for the day.                 |
-| Sprint Planning      | Start of sprint | 30 min   | All                 | Team selects and commits to work items for the upcoming sprint.        |
-| Sprint Review        | End of sprint   | 30 min   | Lead + stakeholders | Team demos completed work to stakeholders and gathers feedback.        |
-| Sprint Retrospective | End of sprint   | 30 min   | All                 | Team reflects on the sprint to identify process improvements.          |
-| Tech Sync            | Weekly          | 30 min   | Lead + Seniors      | Technical leads discuss architecture, debt, and engineering decisions. |
+| Ceremony | Frequency | Duration | Attendees |
+|----------|-----------|----------|-----------|
+| Daily Standup | Daily (async) | 5 min | All |
+| Sprint Planning | Start of sprint | 1 hour | All |
+| Sprint Review | End of sprint | 30 min | All + stakeholder |
+| Sprint Retrospective | End of sprint | 30 min | All |
+| Tech Sync | Weekly | 30 min | Tech Lead + Seniors |
 
 ### 8.2 Tools
 
-- **Communication:** WhatsApp/Discord
-- **Task tracking:** [Jira](https://it-jsu.atlassian.net/jira/software/projects/JSU/boards/1/backlog)
+- **Communication:** Discord/Slack channel
+- **Task tracking:** GitHub Projects or Linear
 - **Code:** GitHub with PR reviews
 - **Design:** Figma with dev handoff
-- **Documentation:** GitHub repo (`/docs`)
+- **Documentation:** This repo (`/docs`)
 
 ### 8.3 Async-First During Low Capacity
 
+During exams and holidays:
 - No mandatory sync meetings
-- Daily standups replaced by text updates
+- Daily standups via text (Discord/Slack)
 - PRs reviewed within 48 hours
 - Critical issues flagged immediately
 
@@ -791,12 +745,6 @@ The team will use AI coding assistants (Cursor, Copilot) to accelerate developme
   - Security-sensitive code (review carefully)
   - Complex business logic (verify thoroughly)
 
-- **Model recommendation:**
-  - **UI** → Gemini 3 Pro
-  - **Planning** → Claude 4.5 Opus
-  - **Coding** → Composer 1 / Gemini 2.5 Flash / Claude 4.5 Haiku (smaller models work great if you have a good plan)
-
-
 ### 9.2 Review Requirements
 
 All AI-generated code must still:
@@ -807,12 +755,15 @@ All AI-generated code must still:
 
 ---
 
-## 10. Backup: What to Cut if Behind
+## 10. Contingency: What to Cut if Behind
 
 If we fall significantly behind schedule, cut in this order:
 
-1. **House chat** → Use WhatsApp groups
-2. **Faculty chat** → Use WhatsApp groups
+1. **Meal voting** → Use Google Forms
+2. **Photo gallery** → Use shared Google Photos
+3. **Detailed reports** → Basic views only, export to Excel
+4. **House chat** → Use WhatsApp groups (already discussed with stakeholder)
+5. **Faculty chat** → Use WhatsApp groups (last resort)
 
 **Never cut:**
 - Authentication
@@ -826,6 +777,61 @@ If we fall significantly behind schedule, cut in this order:
 
 ## Appendix A: Sprint Calendar View
 
+```mermaid
+gantt
+    title JSU XIX Development Calendar (Dec 2025 - Jul 2026)
+    dateFormat YYYY-MM-DD
+    tickInterval 1 week
+    
+    section December 2025
+    Sprint 0 - Setup & Onboarding   :s0, 2025-12-09, 2025-12-22
+    🎄 Holiday Break                :crit, holiday1, 2025-12-23, 2026-01-05
+    
+    section January 2026
+    Sprint 1 - Authentication       :s1, 2026-01-06, 2026-01-18
+    📚 Semester 1 Exams             :crit, exams1, 2026-01-19, 2026-02-08
+    
+    section February 2026
+    Sprint 2 - Profiles & Schedule  :s2, 2026-02-09, 2026-02-22
+    Sprint 3 - QR Scanner           :active, s3, 2026-02-23, 2026-03-09
+    
+    section March 2026
+    Sprint 4 - Drink Tracking       :active, s4, 2026-03-10, 2026-03-23
+    Sprint 5 - Documents & Gallery  :active, s5, 2026-03-24, 2026-04-06
+    
+    section April 2026
+    Sprint 6 - RO-Alert + Chat      :s6, 2026-04-07, 2026-04-12
+    🐰 Easter Vacation              :crit, easter, 2026-04-13, 2026-04-19
+    Sprint 6 continues              :s6b, 2026-04-20, 2026-04-20
+    Sprint 7 - Admin + Houses       :s7, 2026-04-21, 2026-05-04
+    
+    section May 2026
+    Sprint 8 - Reports & Coordinator :s8, 2026-05-05, 2026-05-18
+    🔒 CODE FREEZE                  :milestone, freeze, 2026-05-18, 1d
+    Sprint 9 - Store Prep           :s9, 2026-05-19, 2026-06-01
+    📚 Year 3 Exams Start           :crit, yr3exam, 2026-05-25, 2026-06-07
+    
+    section June 2026
+    Sprint 10 - Rejection Handling  :s10, 2026-06-02, 2026-06-15
+    📚 Year 1-2 Exams               :crit, yr12exam, 2026-06-08, 2026-06-28
+    Sprint 11 - Final Buffer        :s11, 2026-06-16, 2026-06-29
+    🎓 Thesis Defense (Yr 3)        :crit, thesis, 2026-06-29, 2026-07-05
+    
+    section July 2026
+    🚀 APP LIVE                     :milestone, live, 2026-07-01, 0d
+```
+
+### Calendar Legend
+
+| Symbol | Meaning |
+|--------|---------|
+| 🎄 | Christmas/New Year Holiday |
+| 📚 | Exam Period (reduced capacity) |
+| 🐰 | Easter Vacation |
+| 🔒 | Code Freeze - No new features |
+| 🎓 | Thesis Defense Period |
+| 🚀 | Launch Day |
+
 ### Capacity by Period
 
 ```mermaid
@@ -838,7 +844,43 @@ pie showData
     "Minimal (15-25%)" : 4
 ```
 
+### Sprint Flow
 
+```mermaid
+flowchart LR
+    subgraph Foundation["🏗️ Foundation Phase"]
+        S0[S0: Setup]
+        S1[S1: Auth]
+    end
+    
+    subgraph Core["⭐ Core Features Phase"]
+        S2[S2: Profiles]
+        S3[S3: QR Scanner]
+        S4[S4: Drinks]
+        S5[S5: Docs/Gallery]
+    end
+    
+    subgraph Advanced["🚀 Advanced Phase"]
+        S6[S6: Alerts/Chat]
+        S7[S7: Admin/Houses]
+        S8[S8: Reports]
+    end
+    
+    subgraph Release["📱 Release Phase"]
+        S9[S9: Store Prep]
+        S10[S10: Rejections]
+        S11[S11: Buffer]
+        LIVE((🎉 LIVE))
+    end
+    
+    S0 --> S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9 --> S10 --> S11 --> LIVE
+    
+    style Foundation fill:#e0f2fe
+    style Core fill:#dcfce7
+    style Advanced fill:#fef3c7
+    style Release fill:#fce7f3
+    style LIVE fill:#4ade80,stroke:#16a34a,stroke-width:3px
+```
 
 ---
 
@@ -856,3 +898,6 @@ pie showData
 | QR | react-native-qrcode-svg + expo-camera | - |
 
 ---
+
+*Document maintained by: IT Team JSU XIX*  
+*Next review: End of each sprint*
